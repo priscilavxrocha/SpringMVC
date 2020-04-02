@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	<meta charset="UTF-8">
+	<title>Multas</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		
+		body{
+			background-color: #566e7a;
+		}
+		
+		h1 {
+		color: #FFFFFF; 
+		text-align: center;
+		}
+		
+	</style>
+	</head>
+	<body>
+		<section class="container">
+			
+			<h1>
+				Listagem de Multas
+			</h1>
+			<br>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Descrição</th>
+						<th>Valor</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="multa: ${multas}">
+						<td th:text="${multa.id}">1</td>
+						<td th:text="${multa.descricao}">Graves</td>
+						<td th:text="${multa.valor}">249.99</td>
+				   </tr>
+				</tbody>
+			</table>
+			
+		</section>
+	
+	</body>
+</html>
